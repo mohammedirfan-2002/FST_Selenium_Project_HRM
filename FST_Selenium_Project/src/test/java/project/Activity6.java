@@ -1,4 +1,4 @@
-package project;
+package Orange_HRM;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -31,7 +31,7 @@ public class Activity6 {
 	}
 
 	@Test(priority = 1)
-	public void verifyPageTitle() {
+	public void verifyLoginPageTitle() {
 		// assert
 		assertEquals(driver.getTitle(), "OrangeHRM");
 	}
@@ -44,6 +44,16 @@ public class Activity6 {
 		driver.findElement(By.id("txtPassword")).sendKeys("5Nx#I6BK%r3$8vz0ch");
 		// click submit button
 		driver.findElement(By.id("btnLogin")).click();
+		
+		//explicit wait
+		wait.until(ExpectedConditions.urlContains("dashboard"));
+		// Verify login by checking navigation bar
+	    WebElement navBar =
+	            driver.findElement(
+	            By.id("mainMenuFirstLevelUnorderedList"));
+
+	    assertTrue(navBar.isDisplayed(),
+	            "Login unsuccessful");
 
 	}
 
