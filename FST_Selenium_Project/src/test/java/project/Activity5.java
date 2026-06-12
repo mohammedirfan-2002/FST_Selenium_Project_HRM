@@ -69,9 +69,9 @@ public class Activity5 {
 
 	@DataProvider(name = "Credentials")
 	public Object[][] creds() {
-		return new Object[][] { { "nirup", "lokesh", "male", "Indian", "2003-04-04" },
-				{ "sudeep", "varma", "male", "French", "2003-04-03" },
-
+		return new Object[][] { 
+			{ "nirup", "lokesh", "male", "Indian", "2003-04-04" },
+			{ "sudeep", "varma", "male", "French", "2003-04-03" },
 		};
 	}
 
@@ -83,13 +83,13 @@ public class Activity5 {
 		// enter the first name
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("personal_txtEmpFirstName")));
 		WebElement fs = driver.findElement(By.id("personal_txtEmpFirstName"));
-		fs.sendKeys(firstName);
 		fs.clear();
+		fs.sendKeys(firstName);
 
 		// enter the last name
 		WebElement ls = driver.findElement(By.id("personal_txtEmpLastName"));
-		ls.sendKeys(lastName);
 		ls.clear();
+		ls.sendKeys(lastName);
 
 		// enter the gender
 		if (gender == "male") {
@@ -111,6 +111,10 @@ public class Activity5 {
 		// click the save button
 		driver.findElement(By.id("btnSave")).click();
 
+		// catch the success msg
+		WebElement successMsg = wait.until(
+			ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.fadable")));
+		Assert.assertTrue(successMsg.isDisplayed(), "Success message not shown!");
 	}
 
 	@AfterClass
