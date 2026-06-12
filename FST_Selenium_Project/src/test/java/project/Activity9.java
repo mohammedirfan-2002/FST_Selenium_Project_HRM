@@ -60,7 +60,8 @@ public class Activity9 {
 		for(WebElement row:rows) {
 			System.out.println(row.getText());
 		}
-		
+		boolean isPresent = rows.size()>0;
+		assertEquals(isPresent,true);
 	}
 	
 	@AfterClass
