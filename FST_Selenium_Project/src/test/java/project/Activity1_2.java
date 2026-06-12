@@ -56,6 +56,7 @@ public class Activity1_2 {
 		WebElement image = driver.findElement(By.xpath("//img[contains(@src, 'symfony')]"));
 		String src = image.getAttribute("src");
 		System.out.println(src);
+		Assert.assertEquals("http://hrm.local:3050/symfony/web/webres_618e67a57beec1.83834480/themes/default/images/login/logo.png", src);
 	}
 
 	@AfterClass
