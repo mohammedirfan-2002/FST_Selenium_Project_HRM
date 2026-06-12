@@ -1,4 +1,4 @@
-package activity;
+package project;
 
 import java.time.Duration;
 import org.testng.annotations.DataProvider;
@@ -14,7 +14,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class HRM_Activty_8 {
+public class Activity8 {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -23,7 +23,7 @@ public class HRM_Activty_8 {
     public void setup() {
         driver = new FirefoxDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("http://hrm.local:3050/symfony/web/index.php/auth/login");
+        driver.get("http://hrm.local:3050");
     }
 
     @Test(priority = 1)

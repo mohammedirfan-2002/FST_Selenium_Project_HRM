@@ -12,7 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Activity_3 {
+public class Activity3 {
 	WebDriver driver;
 	WebDriverWait wait;
 	@BeforeClass

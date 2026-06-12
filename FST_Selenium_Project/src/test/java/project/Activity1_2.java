@@ -1,4 +1,4 @@
-package orange_hrm_test;
+package project;
 
 import java.time.Duration;
 
